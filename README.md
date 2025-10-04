@@ -75,7 +75,7 @@ cd notepad-app
 ```bash
 cd server
 npm install        # Install backend dependencies
-npm run dev        # Start backend server
+node server.js       # Start backend server
 ```
 
 ### 3.Setup Frontend
@@ -114,8 +114,8 @@ DELETE /api/notes/:id   # Delete a note
 ### 🤝 Contributing
 
 Contributions are welcome!  
-* Fork this repo  
-* Create a new branch (feature-branch)  
-* Commit your changes
-* Push to your branch
-* Open a Pull Request
+1. Fork this repo  
+2. Create a new branch (feature-branch)  
+3. Commit your changes
+4. Push to your branch
+5. Open a Pull Request
