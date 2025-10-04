@@ -108,3 +108,14 @@ POST   /api/notes       # Create new note
 PUT    /api/notes/:id   # Update a note
 DELETE /api/notes/:id   # Delete a note
 ```
+
+---
+
+### 🤝 Contributing
+
+Contributions are welcome!  
+* Fork this repo  
+* Create a new branch (feature-branch)  
+* Commit your changes
+* Push to your branch
+* Open a Pull Request
