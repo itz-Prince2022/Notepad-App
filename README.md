@@ -57,3 +57,44 @@ notepad-app/
 │   └── package.json       
 │
 └── README.md              # Documentation
+
+---
+
+## ⚙️ Installation & Setup
+
+Follow these steps to set up and run the project locally:
+
+### 1.Clone the Repository
+```bash
+git clone https://github.com/your-username/notepad-app.git
+cd notepad-app
+
+### 2.Setup Backend
+cd backend
+npm install        # Install backend dependencies
+npm run dev        # Start backend server
+
+### 3.Setup Frontend
+cd frontend
+npm install        # Install frontend dependencies
+npm start          # Start frontend development server
+
+### 4.Access the App
+Open your browser and go to:
+👉 http://localhost:3000
+
+---
+
+### 🔑 Environment Variables
+Create a `.env` file in the backend folder and add:
+MONGO_URI=your_mongodb_connection_string
+PORT=5000
+JWT_SECRET=your_secret_key
+
+---
+
+### 📌 API Endpoints (Backend)
+GET    /api/notes       # Get all notes
+POST   /api/notes       # Create new note
+PUT    /api/notes/:id   # Update a note
+DELETE /api/notes/:id   # Delete a note
