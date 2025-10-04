@@ -86,7 +86,7 @@ npm run dev         # Start frontend development server
 ```
 
 ### 4.Access the App
-Open your browser and go to:
+Open your browser and go to:  
 👉 http://localhost:3000
 
 ---
