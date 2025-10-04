@@ -18,7 +18,7 @@ Built with a modern **frontend** and a robust **backend**, the app provides a sm
 
 ## 📸 Screenshots
 
-<div style="display: grid; grid-template-columns: auto auto; gap:1rem;">
+<div style="display: grid; grid-template-columns: auto auto;">
   <img src="./screenshots/1.png" alt="Notepad App Banner"/> 
   <img src="./screenshots/2.png" alt="Notepad App Banner"/>
   <img src="./screenshots/3.png" alt="Notepad App Banner"/>
