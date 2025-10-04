@@ -69,7 +69,6 @@ notepad-app/
 │
 └── README.md              # Documentation
 
----
 ```
 
 ## ⚙️ Installation & Setup
