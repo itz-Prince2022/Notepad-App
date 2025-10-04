@@ -17,7 +17,7 @@ This app allows users to **create, edit, delete, and manage notes** with a clean
 ## 🛠️ Tech Stack
 - **Frontend Framework**: React (or HTML/CSS/JS)  
 - **Styling**: Tailwind CSS / CSS3  
-- **State Management**: React Hooks / Context API (if used)  
+- **State Management**: React Hooks / Context API 
 - **Build Tool**: Vite / Create React App  
 
 ---
