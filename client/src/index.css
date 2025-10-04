@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+  --card-width: 250px;
+  --card-maxwidth: 350px;
+  --pad: 1rem;
+  --borderColor: rgb(211, 211, 211);
+  --bg-color: #f8f9fc;
+}
+
+* {
+  /* margin: 0;
+  padding: 0; */
+  box-sizing: border-box;
+  /* font-family: "Artifika", serif; */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: normal;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+}
+
+.card {
+  /* background: rgb(255, 253, 253); */
+  background-color: #ffffff;
+  /* background: white; */
+  position: relative;
+  border: 1.4px solid var(--borderColor);
+  padding: var(--pad);
+  word-wrap: normal;
+  /* min-width: var(--card-width); */
+  width: var(--card-maxwidth);
+  width: auto;
+  /* height: calc(var(--card-maxwidth) + 20px); */
+  height: auto;
+  /* margin: var(--pad); */
+  border-radius: 8px;
+  transition: all 0.1s ease-in-out;
+  user-select: none;
+}
+
+.card:hover {
+  box-shadow: 0 1px 2px 1px rgba(160, 158, 158, 0.701);
+  transition: all 0.1s ease-in-out;
+}
+
+.heading {
+  font-weight: 200;
+  font-size: 1.4rem;
+}
+
+.description {
+  margin: 1rem 0 0 0;
+  /* overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 8;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical; */
+}
+
+.description > textarea {
+  width: 100%;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  line-clamp: 18;
+  -webkit-line-clamp: 18;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  resize: none;
+  field-sizing: content;
+  min-height: 30px;
+  white-space: normal;
+}
+
+.creation-date {
+  /* position: absolute; */
+  /* bottom: var(--pad); */
+  /* bottom: 50px; */
+  display: block;
+  padding: 2rem 0 0 0;
+  font-size: small;
+  color: #999;
+}
+
+.del-btn {
+  position: absolute;
+  left: 1.5rem;
+  bottom: var(--pad);
+  /* transform: translateY(-50%); */
+  font-size: .9rem;
+  color: #ffffff;
+  /* cursor: pointer; */
+  border: 1px solid var(--borderColor);
+}
