@@ -25,7 +25,7 @@ Built with a modern **frontend** and a robust **backend**, the app provides a sm
   <img src="./screenshots/4.png" alt="Notepad App Banner"/>
 </div>
 
-![alt-text-1](1.png "title-1") ![alt-text-2](2.png "title-2")
+![alt-text-1](./screenshots/1.png "title-1") ![alt-text-2](./screenshots/2.png "title-2")
 
 
 ---
