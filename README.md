@@ -59,6 +59,7 @@ notepad-app/
 └── README.md              # Documentation
 
 ---
+```
 
 ## ⚙️ Installation & Setup
 
@@ -68,6 +69,7 @@ Follow these steps to set up and run the project locally:
 ```bash
 git clone https://github.com/your-username/notepad-app.git
 cd notepad-app
+```
 
 ### 2.Setup Backend
 cd backend
