@@ -16,6 +16,18 @@ Built with a modern **frontend** and a robust **backend**, the app provides a sm
 
 ---
 
+## 📸 Screenshots
+
+<div>
+  <img src="./screenshots/app-banner.png" alt="Notepad App Banner" width="50%"/>
+  <img src="./screenshots/app-banner.png" alt="Notepad App Banner" width="50%"/>
+  <img src="./screenshots/app-banner.png" alt="Notepad App Banner" width="50%"/>
+  <img src="./screenshots/app-banner.png" alt="Notepad App Banner" width="50%"/>
+</div>
+
+
+---
+
 ## 🚀 Features
 - ✨ Create and save notes  
 - 🖊️ Edit and update notes  
@@ -111,7 +123,7 @@ DELETE /api/notes/:id   # Delete a note
 
 ---
 
-### 🤝 Contributing
+## 🤝 Contributing
 
 Contributions are welcome!  
 1. Fork this repo  
