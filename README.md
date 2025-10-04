@@ -44,12 +44,12 @@ Built with a modern **frontend** and a robust **backend**, the app provides a sm
 ## 📂 Folder Structure
 ```bash
 notepad-app/
-├── frontend/              # React-based UI
+├── client/              # React-based UI
 │   ├── public/            
 │   ├── src/               
 │   └── package.json       
 │
-├── backend/               # Node.js + Express server
+├── server/               # Node.js + Express server
 │   ├── routes/            
 │   ├── models/            
 │   ├── controllers/       
@@ -72,14 +72,18 @@ cd notepad-app
 ```
 
 ### 2.Setup Backend
-cd backend
+```bash
+cd server
 npm install        # Install backend dependencies
 npm run dev        # Start backend server
+```
 
 ### 3.Setup Frontend
-cd frontend
+```bash
+cd client
 npm install        # Install frontend dependencies
-npm start          # Start frontend development server
+npm run dev         # Start frontend development server
+```
 
 ### 4.Access the App
 Open your browser and go to:
@@ -88,15 +92,19 @@ Open your browser and go to:
 ---
 
 ### 🔑 Environment Variables
+```bash
 Create a `.env` file in the backend folder and add:
 MONGO_URI=your_mongodb_connection_string
 PORT=5000
 JWT_SECRET=your_secret_key
+```
 
 ---
 
 ### 📌 API Endpoints (Backend)
+```bash
 GET    /api/notes       # Get all notes
 POST   /api/notes       # Create new note
 PUT    /api/notes/:id   # Update a note
 DELETE /api/notes/:id   # Delete a note
+```
