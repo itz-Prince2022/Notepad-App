@@ -134,7 +134,7 @@ const Notes = () => {
                                         <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
                                             <Plus className="w-8 h-8 text-blue-500" />
                                         </div>
-                                        <p className="text-lg font-medium text-gray-600">Create your first note!</p>
+                                        <p className="text-lg font-medium text-gray-600">Create your first note! by just pressing on + icon inside navbar</p>
                                     </>
                                 )}
                              </div>
