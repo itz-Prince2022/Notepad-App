@@ -17,7 +17,10 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(cors({
-    origin: "*", 
+    origin: [
+        "http://localhost:5173",
+        "https://notepad-pro-prince.vercel.app" // Allow Vercel
+    ],
     credentials: true
 }));
 
