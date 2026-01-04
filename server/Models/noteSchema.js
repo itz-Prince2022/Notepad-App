@@ -1,18 +1,21 @@
 import mongoose from "mongoose";
 
 const notesSchema = new mongoose.Schema({
-    title: {
-        type: String,
-        required: true
+    title: { type: String, required: true, trim: true },
+    content: { type: String, required: true },
+    isPinned: { type: Boolean, default: false },
+    tags: { 
+        type: [String],
+        default: [],
     },
-    content: {
-        type: String,
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
         required: true
     }
-},{
-  timestamps: true // This option adds `createdAt` and `updatedAt` fields
-});
+}, { timestamps: true });
 
-const notes = mongoose.model("notes", notesSchema);
+// Text index for search
+notesSchema.index({ title: 'text', content: 'text' });
 
-export default notes;
+export default mongoose.model("Note", notesSchema);
