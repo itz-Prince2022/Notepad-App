@@ -25,7 +25,6 @@ app.use(cors({
 
 app.use(helmet());
 app.use(morgan('dev'));
-app.use(cors({ origin:  || 'http://localhost:5173' }));
 app.use(express.json());
 
 // Register the routes
