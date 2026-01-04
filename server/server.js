@@ -18,15 +18,14 @@ const port = process.env.PORT || 3000;
 
 app.use(cors({
     origin: [
-        "http://localhost:5173",
-        "https://notepad-pro-prince.vercel.app" // Allow Vercel
+        process.env.CLIENT_URL // Allow Vercel
     ],
     credentials: true
 }));
 
 app.use(helmet());
 app.use(morgan('dev'));
-app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:5173' }));
+app.use(cors({ origin:  || 'http://localhost:5173' }));
 app.use(express.json());
 
 // Register the routes
