@@ -1,3 +1,34 @@
 # Ignore all env files
 *.env
 node_modules
+
+# --- Dependencies ---
+node_modules/
+*/node_modules/
+**/node_modules/
+
+# --- Environment Variables (Secrets) ---
+.env
+*/.env
+**/.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# --- Build Outputs (Don't push production code) ---
+dist/
+build/
+*/dist/
+*/build/
+
+# --- System Files (Junk) ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Logs ---
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
