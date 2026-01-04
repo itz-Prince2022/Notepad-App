@@ -9,16 +9,16 @@ export const googleLogin = async (req, res) => {
     try {
         const { token } = req.body;
         
-        // 1. Verify Google Token
+        // Verify Google Token
         const ticket = await client.verifyIdToken({
             idToken: token,
             audience: process.env.GOOGLE_CLIENT_ID,
         });
         
-        // 2. Extract Info from Google
+        // Extract Info from Google
         const { name, email, picture, sub: googleId } = ticket.getPayload();
 
-        // 3. Find or Create User
+        // Find or Create User
         let user = await User.findOne({ email });
 
         if (user) {
@@ -32,14 +32,14 @@ export const googleLogin = async (req, res) => {
                 name,
                 email,
                 googleId,
-                picture, // <--- CRITICAL: Save the picture
+                picture, // Save the picture
                 password: await bcrypt.hash(Date.now() + "secret", 10)
             });
         }
 
         const appToken = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "30d" });
 
-        // 4. Send Response (FLAT STRUCTURE)
+        // Send Response (FLAT STRUCTURE)
         // We send the user details directly so frontend can access user.picture easily
         res.status(200).json({
             _id: user._id,

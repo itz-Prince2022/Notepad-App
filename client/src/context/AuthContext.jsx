@@ -5,7 +5,7 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true); // <--- NEW: Loading state
+  const [loading, setLoading] = useState(true); // Loading state
 
   useEffect(() => {
     const savedUser = localStorage.getItem('userInfo');

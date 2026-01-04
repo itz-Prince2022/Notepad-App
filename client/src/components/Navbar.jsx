@@ -13,7 +13,7 @@ const Navbar = ({ onNewNoteClick, onSearch, searchQuery }) => {
         
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
             
-            {/* --- MODE 1: EXPANDED SEARCH (Mobile) --- */}
+            {/* EXPANDED SEARCH (Mobile) */}
             {isSearchExpanded ? (
                 <div className="flex items-center w-full gap-3 animate-in fade-in slide-in-from-top-2 duration-200">
                     <button 
@@ -37,7 +37,7 @@ const Navbar = ({ onNewNoteClick, onSearch, searchQuery }) => {
                     )}
                 </div>
             ) : (
-                /* --- MODE 2: STANDARD NAVBAR --- */
+                /* STANDARD NAVBAR */
                 <>
                     {/* LEFT: Logo */}
                     <div className="flex items-center gap-2 select-none min-w-max">
@@ -74,7 +74,7 @@ const Navbar = ({ onNewNoteClick, onSearch, searchQuery }) => {
                             <Search className="w-6 h-6" />
                         </button>
 
-                        {/* 2. CREATE NOTE ICON (Mobile & Desktop Unified) */}
+                        {/* CREATE NOTE ICON (Mobile & Desktop Unified) */}
                         {/* Mobile: Simple Icon */}
                         <button 
                             onClick={onNewNoteClick}
@@ -92,7 +92,7 @@ const Navbar = ({ onNewNoteClick, onSearch, searchQuery }) => {
                             <span>Create</span>
                         </button>
 
-                        {/* 3. Profile Dropdown */}
+                        {/* Profile Dropdown */}
                         <div className="relative ml-1">
                             <button 
                                 onClick={() => setIsProfileOpen(!isProfileOpen)}
