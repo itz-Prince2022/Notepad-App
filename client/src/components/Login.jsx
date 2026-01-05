@@ -64,7 +64,7 @@ const Login = () => {
             
             {/* Footer */}
             <div className="mt-8 text-center text-xs text-gray-400">
-                <p>&copy; {new Date().getFullYear()} Notepad App. Secured by Us.</p>
+                <p>&copy; {new Date().getFullYear()} Notepad Pro. Developed by Prince Patel.</p>
             </div>
         </div>
     );
