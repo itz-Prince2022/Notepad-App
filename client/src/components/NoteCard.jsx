@@ -1,49 +1,48 @@
 import React from 'react';
 import { Pin, Trash2, Edit3 } from 'lucide-react'; 
-import moment from 'moment'; // npm install moment (Optional, makes dates look nicer)
+import moment from 'moment'; 
 
 const NoteCard = ({ note, onEdit, onDelete, onPin }) => {
-    // 1. SAFETY FIX: Default to empty strings if data is missing
-    // This prevents the "undefined reading length" crash
     const title = note?.title || "Untitled";
     const content = note?.content || ""; 
     const isPinned = note?.isPinned || false;
     const tags = note?.tags || [];
     
-    // Format Date: "Jan 3rd, 2026"
     const dateFormatted = moment(note?.updatedAt).format('MMM Do YYYY, h:mm a');
 
     return (
         <div className="group relative break-inside-avoid mb-6 w-full">
-            <div className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 ease-out cursor-default flex flex-col justify-between min-h-[160px]">
+            {/* REMOVED: 'hover:-translate-y-1' 
+               RESULT: The card is now static and won't move up.
+            */}
+            <div className="bg-white border border-gray-200/60 rounded-2xl p-5 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 ease-out cursor-default flex flex-col justify-between min-h-[160px]">
                 
                 {/* --- HEADER --- */}
                 <div className="flex justify-between items-start mb-3">
-                    <h2 className="text-lg font-bold text-gray-800 leading-snug w-[85%]">
+                    <h2 className="text-lg font-bold text-gray-800 leading-snug w-[85%] break-words">
                         {title}
                     </h2>
                     
-                    {/* Pin Button */}
                     <button 
                         onClick={(e) => { e.stopPropagation(); onPin(note); }}
-                        className={`transition-colors p-1 rounded-full ${isPinned ? 'text-blue-600 bg-blue-50' : 'text-gray-300 opacity-0 group-hover:opacity-100 hover:text-gray-600'}`}
+                        className={`p-2 -mr-2 -mt-2 rounded-full transition-colors ${isPinned ? 'text-blue-500' : 'text-gray-300 lg:opacity-0 lg:group-hover:opacity-100 hover:text-gray-600'}`}
+                        aria-label="Pin note"
                     >
                         <Pin className={`w-4 h-4 ${isPinned ? 'fill-current' : ''}`} />
                     </button>
                 </div>
 
                 {/* --- CONTENT --- */}
-                {/* Replaced textarea with div for better readability */}
-                <div className="text-gray-600 text-sm whitespace-pre-wrap leading-relaxed mb-4 line-clamp-6 font-medium">
+                <div className="text-gray-600 text-sm whitespace-pre-wrap leading-relaxed mb-4 line-clamp-6 font-medium break-words">
                     {content.slice(0, 400)}
                     {content.length > 400 && <span className="text-gray-400">...read more</span>}
                 </div>
 
-                {/* --- TAGS (Optional) --- */}
+                {/* --- TAGS --- */}
                 {tags.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mb-3">
+                    <div className="flex flex-wrap gap-2 mb-4">
                         {tags.map((tag, i) => (
-                            <span key={i} className="bg-gray-100 text-gray-500 text-[10px] px-2 py-1 rounded-md uppercase font-bold tracking-wider">
+                            <span key={i} className="bg-blue-50/50 text-blue-600 border border-blue-100 text-[10px] px-2 py-1 rounded-md uppercase font-bold tracking-wider">
                                 #{tag}
                             </span>
                         ))}
@@ -51,25 +50,27 @@ const NoteCard = ({ note, onEdit, onDelete, onPin }) => {
                 )}
 
                 {/* --- FOOTER --- */}
-                <div className="flex items-center justify-between pt-3 border-t border-gray-100 mt-auto">
+                <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-auto">
                     <span className="text-[10px] text-gray-400 font-semibold tracking-wide">
                         {dateFormatted}
                         <span className='px-2'> | </span>
                         <span> Word Count: {content.length}</span>
                     </span>
 
-                    {/* Action Buttons (Visible on Hover) */}
-                    <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    {/* Action Buttons */}
+                    <div className="flex gap-1 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-200">
                         <button 
-                            onClick={(e) => { e.stopPropagation(); onEdit(note); }}
-                            className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-full transition-all"
+                            onClick={(e) => { e.stopPropagation(); onEdit(note); }} 
+                            className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-full transition-all active:scale-90"
+                            title="Edit"
                         >
                             <Edit3 className="w-4 h-4" />
                         </button>
                         
                         <button 
-                            onClick={(e) => { e.stopPropagation(); onDelete(note._id); }}
-                            className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-full transition-all"
+                            onClick={(e) => { e.stopPropagation(); onDelete(note._id); }} 
+                            className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-full transition-all active:scale-90"
+                            title="Delete"
                         >
                             <Trash2 className="w-4 h-4" />
                         </button>
@@ -81,6 +82,94 @@ const NoteCard = ({ note, onEdit, onDelete, onPin }) => {
 };
 
 export default NoteCard;
+
+
+
+
+
+// import React from 'react';
+// import { Pin, Trash2, Edit3 } from 'lucide-react'; 
+// import moment from 'moment'; // npm install moment (Optional, makes dates look nicer)
+
+// const NoteCard = ({ note, onEdit, onDelete, onPin }) => {
+//     // 1. SAFETY FIX: Default to empty strings if data is missing
+//     // This prevents the "undefined reading length" crash
+//     const title = note?.title || "Untitled";
+//     const content = note?.content || ""; 
+//     const isPinned = note?.isPinned || false;
+//     const tags = note?.tags || [];
+    
+//     // Format Date: "Jan 3rd, 2026"
+//     const dateFormatted = moment(note?.updatedAt).format('MMM Do YYYY, h:mm a');
+
+//     return (
+//         <div className="group relative break-inside-avoid mb-6 w-full">
+//             <div className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 ease-out cursor-default flex flex-col justify-between min-h-[160px]">
+                
+//                 {/* --- HEADER --- */}
+//                 <div className="flex justify-between items-start mb-3">
+//                     <h2 className="text-lg font-bold text-gray-800 leading-snug w-[85%]">
+//                         {title}
+//                     </h2>
+                    
+//                     {/* Pin Button */}
+//                     <button 
+//                         onClick={(e) => { e.stopPropagation(); onPin(note); }}
+//                         className={`transition-colors p-1 rounded-full ${isPinned ? 'text-blue-600 bg-blue-50' : 'text-gray-300 opacity-0 group-hover:opacity-100 hover:text-gray-600'}`}
+//                     >
+//                         <Pin className={`w-4 h-4 ${isPinned ? 'fill-current' : ''}`} />
+//                     </button>
+//                 </div>
+
+//                 {/* --- CONTENT --- */}
+//                 {/* Replaced textarea with div for better readability */}
+//                 <div className="text-gray-600 text-sm whitespace-pre-wrap leading-relaxed mb-4 line-clamp-6 font-medium">
+//                     {content.slice(0, 400)}
+//                     {content.length > 400 && <span className="text-gray-400">...read more</span>}
+//                 </div>
+
+//                 {/* --- TAGS (Optional) --- */}
+//                 {tags.length > 0 && (
+//                     <div className="flex flex-wrap gap-2 mb-3">
+//                         {tags.map((tag, i) => (
+//                             <span key={i} className="bg-gray-100 text-gray-500 text-[10px] px-2 py-1 rounded-md uppercase font-bold tracking-wider">
+//                                 #{tag}
+//                             </span>
+//                         ))}
+//                     </div>
+//                 )}
+
+//                 {/* --- FOOTER --- */}
+//                 <div className="flex items-center justify-between pt-3 border-t border-gray-100 mt-auto">
+//                     <span className="text-[10px] text-gray-400 font-semibold tracking-wide">
+//                         {dateFormatted}
+//                         <span className='px-2'> | </span>
+//                         <span> Word Count: {content.length}</span>
+//                     </span>
+
+//                     {/* Action Buttons (Visible on Hover) */}
+//                     <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+//                         <button 
+//                             onClick={(e) => { e.stopPropagation(); onEdit(note); }}
+//                             className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-full transition-all"
+//                         >
+//                             <Edit3 className="w-4 h-4" />
+//                         </button>
+                        
+//                         <button 
+//                             onClick={(e) => { e.stopPropagation(); onDelete(note._id); }}
+//                             className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-full transition-all"
+//                         >
+//                             <Trash2 className="w-4 h-4" />
+//                         </button>
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//     );
+// };
+
+// export default NoteCard;
 
 
 
