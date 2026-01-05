@@ -81,6 +81,9 @@ const Login = () => {
             <div className="mt-8 text-center text-xs text-gray-400">
                 <p>&copy; {new Date().getFullYear()} Notepad Pro. Developed by Prince Patel.</p>
             </div>
+            <p className="text-gray-400 text-xs mt-1">
+                v{import.meta.env.PACKAGE_VERSION}
+            </p>
         </div>
     );
 };
