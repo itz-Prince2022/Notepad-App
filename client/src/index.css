@@ -12,8 +12,6 @@
   /* margin: 0;
   padding: 0; */
   box-sizing: border-box;
-  /* font-family: "Artifika", serif; */
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-style: normal;
 }
 
@@ -22,6 +20,8 @@ body {
   width: 100%;
   height: 100%;
   background: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased; /* Makes text look smoother */
 }
 
 .card {
