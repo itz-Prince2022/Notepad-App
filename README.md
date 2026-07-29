@@ -19,10 +19,10 @@ Built with a modern **frontend** and a robust **backend**, the app provides a sm
 ## 📸 Screenshots
 
 <div>
-  <img src="./screenshots/3.png" alt="Notepad App Banner"/> 
+  <!-- <img src="./screenshots/3.png" alt="Notepad App Banner"/>  -->
   <img src="./screenshots/1.png" alt="Notepad App Banner"/>
   <img src="./screenshots/2.png" alt="Notepad App Banner"/>
-  <img src="./screenshots/4.png" alt="Notepad App Banner"/>
+  <!-- <img src="./screenshots/4.png" alt="Notepad App Banner"/> -->
 </div>
 
 ---
