@@ -78,7 +78,7 @@ Follow these steps to set up and run the project locally:
 
 ### 1.Clone the Repository
 ```bash
-git clone https://github.com/your-username/notepad-app.git
+git clone https://github.com/itz-Prince2022/Notepad-Pro.git
 cd notepad-app
 ```
 
