@@ -28,27 +28,27 @@ Built with a modern **frontend** and a robust **backend**, the app provides a sm
 ---
 
 ## 🚀 Features
-- ✨ Create and save notes  
-- 🖊️ Edit and update notes  
-- ❌ Delete unwanted notes  
-- 📂 Organize notes with a simple UI  
-- 🔄 Persistent storage (database integration)  
-- 📱 Fully responsive design (mobile + desktop)  
-- ⚡ Fast and scalable backend  
+-  Create and save notes  
+-  Edit and update notes  
+-  Delete unwanted notes  
+-  Organize notes with a simple UI  
+-  Persistent storage (database integration)  
+-  Fully responsive design (mobile + desktop)  
+-  Fast and scalable backend  
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-- ⚛️ React (with Hooks / Context API)  
-- 🎨 Tailwind CSS / CSS3  
-- ⚡ Vite / CRA  
+-  React (with Hooks / Context API)  
+-  Tailwind CSS / CSS3  
+-  Vite / CRA  
 
 ### Backend
-- 🟢 Node.js & Express.js  
-- 🗄️ MongoDB / Firebase  
-- 🔐 RESTful APIs  
+-  Node.js & Express.js  
+-  MongoDB / Firebase  
+-  RESTful APIs  
 
 ---
 
